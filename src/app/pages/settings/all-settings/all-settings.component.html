@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid bg">
+
+
+  <div class="d-flex mb-4 flex-wrap headerCont">
+    <button class="headerBTN" [ngClass]="selectedSetting=='connectivity'?'btn-primary':'btn-light'"
+      (click)="selectedSetting!='connectivity'?selectedSetting='connectivity':selectedSetting=''"
+      *ngIf="modules.includes('network')">
+      <i class="fas fa-fw fa-broadcast-tower"></i> Conectividad
+    </button>
+    <button class="headerBTN" [ngClass]="selectedSetting=='wifi'?'btn-primary':'btn-light'"
+      (click)="selectedSetting!='wifi'?selectedSetting='wifi':selectedSetting=''" *ngIf="modules.includes('network')"><i
+        class="fas fa-fw fa-wifi"></i>Wifi</button>
+    <button class="headerBTN" [ngClass]="selectedSetting=='ethernet'?'btn-primary':'btn-light'"
+      (click)="selectedSetting!='ethernet'?selectedSetting='ethernet':selectedSetting=''"
+      *ngIf="modules.includes('network')"><i class="fas fa-fw fa-ethernet"></i>Ethernet</button>
+    <button class="headerBTN" [ngClass]="selectedSetting=='scheduler'?'btn-primary':'btn-light'"
+      (click)="selectedSetting!='scheduler'?selectedSetting='scheduler':selectedSetting=''"
+      *ngIf="modules.includes('schedman')"><i class="fas fa-fw fa-calendar-alt"></i>Planificación horaria</button>
+    <button class="headerBTN" [ngClass]="selectedSetting=='reset'?'btn-primary':'btn-light'"
+      (click)="selectedSetting!='reset'?selectedSetting='reset':selectedSetting=''">
+      <i class="fas fa-power-off"></i>Reset
+    </button>
+    <button class="headerBTN" (click)="selectedSetting=''">All</button>
+  </div>
+
+  <div class="m-3 cardCont">
+    <div class="row"
+      [ngClass]="{'' : selectedSetting == '' || ['connectivity','password','wifi'].includes(selectedSetting)}">
+
+      <div class="col-6 colL">
+        <app-connectivity class="card"
+          [ngClass]="(selectedSetting == '' || selectedSetting == 'connectivity') ? '' : 'd-none'"
+          *ngIf="modules.includes('network')" [allSettings]="true">
+        </app-connectivity>
+
+
+        <app-wifi class="card" [ngClass]="(selectedSetting == '' || selectedSetting == 'wifi') ? '' : 'd-none'"
+          *ngIf="modules.includes('network')" [allSettings]="true">
+        </app-wifi>
+
+        <app-ethernet class="card" [ngClass]="(selectedSetting == '' || selectedSetting == 'ethernet') ? '' : 'd-none'"
+          *ngIf="modules.includes('network')" [allSettings]="true">
+        </app-ethernet>
+      </div>
+
+      <div class="col-6 colR">
+        <app-charge-scheduler class="card"
+          [ngClass]="(selectedSetting == '' || selectedSetting == 'scheduler') ? '' : 'd-none'"
+          *ngIf="modules.includes('schedman')" [connectors]="connectors" [allSettings]="true">
+        </app-charge-scheduler>
+
+        <app-reset class="card" [ngClass]="(selectedSetting == '' || selectedSetting == 'reset') ? '' : 'd-none'"
+          [allSettings]="true">
+        </app-reset>
+
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

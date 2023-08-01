@@ -1,0 +1,68 @@
+<div *ngIf="device">
+  <div class="cardDevice" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title">{{device.name}}</h5>
+
+      <div class="headerDevCont">
+        <div class="row justify-content-space-between">
+          <div class="col-4">
+            <h4>
+              <span>Modelo: </span>{{device.modelo}}
+            </h4>
+          </div>
+          <div class="col-8 text-right">
+            <h4>
+              <span>Propietario: </span>{{device.propietario}}
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div class="infoDevCont">
+        <div class="row">
+          <div class="col-3">
+            <h4>
+              <span>Serial: </span>{{device.serial}}
+            </h4>
+          </div>
+          <div class="col-2">
+            <h4>
+              <span>Versión firm: </span>{{device.version_fimware}}
+            </h4>
+          </div>
+          <div class="col-3">
+            <h4>
+              <span>Versión hard: </span>{{device.version_hardware}}
+            </h4>
+          </div>
+          <div class="col-4">
+            <h4>
+              <span>Dirección mac: </span>{{device.direccion_mac}}
+            </h4>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-4">
+            <h4>
+              <span>Potencia max: </span>{{device.potencia_maxima}}
+            </h4>
+          </div>
+          <div class="col-4">
+            <h4>
+              <span>Límite potencia: </span>{{device.limite_potencia}}
+            </h4>
+          </div>
+          <div class="col-4">
+            <h4>
+              <span>Nº conectores: </span>{{device.numero_conectores}}
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="btn btn-primary">
+        <i class="bi bi-gear"></i>
+         Ajustes
+      </a>
+    </div>
+  </div>
+</div>

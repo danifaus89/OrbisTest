@@ -1,0 +1,44 @@
+<div>
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Conectividad</h5>
+      <h6 class="card-subtitle text-muted">Punto de acceso Wifi al que el cargador está conectado.</h6>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right">SSID</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" placeholder="SSID" name="ssid" [(ngModel)]="body.staEssid"
+              (keyup)="changesMade=_dService.checkChangesSettings(originalData,body)">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right">Contraseña</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" placeholder="Password" name="password"
+              [(ngModel)]="body.staPasswd" (keyup)="changesMade=_dService.checkChangesSettings(originalData,body)">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-10 ml-sm-auto">
+            <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="!changesMade">Guardar</button>
+            <button type="submit" class="btn btn-light ml-2" [disabled]="!changesMade">Restaurar</button>
+          </div>
+
+        </div>
+      </form>
+      <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="error!=''">
+        <div class="alert-message">
+          {{ error }}
+        </div>
+      </div>
+      <div class="alert alert-success alert-dismissible" role="alert" *ngIf="successMessage">
+        <div class="alert-message">
+          {{"settings.successMessage"}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div *ngIf="device">
+  <div class="cardDevice" style="width: 100%;">
+    <div class="card-body">
+
+      <div class="headerDevCont">
+        <h5 class="card-title">{{device.name}}</h5>
+
+      </div>
+      <div class="infoDevCont">
+        <div class="row">
+          <div class="col-6">
+            <h4>
+              <span>Tipo: </span><p>{{device.tipo}}</p>
+            </h4>
+          </div>
+          <div class="col-6">
+            <h4>
+              <span>Estado: </span>
+              <p class="statusOk" *ngIf="device.estado === 'Disponible'"><i class="bi bi-hand-thumbs-up-fill"></i>{{ device.estado }}</p>
+              <p class="statusKo" *ngIf="device.estado === 'Cargando'"><i class="bi bi-arrow-clockwise"></i> {{device.estado}}</p>
+              <p class="statusErr" *ngIf="device.estado === 'Error'"><i class="bi bi-exclamation-diamond-fill"></i> {{device.estado}}</p>
+            </h4>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-6">
+            <h4>
+              <span>Tiempo cargando: </span><p>{{device.tiempo_cargando}}</p>
+            </h4>
+          </div>
+          <div class="col-6">
+            <h4>
+              <span>Carga total: </span><p>{{device.total_cargado}}</p>
+            </h4>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn btn-primary">
+        <i class="bi bi-search"></i> Ver
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div tabindex="-1" role="dialog" aria-hidden="true">
+  <div role="document">
+    <div>
+      <div class="modal-header">
+        <h5 class="modal-title">Añadir tarea</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body m-3">
+
+        <div class="form-group col-xl-12 justify-content-center d-flex">
+          <div class="col-6">
+            <label for="">Hora inicio:</label>
+          </div>
+          <div class="col-6">
+            <input class="form-control" type="time" id="initTime" [(ngModel)]="initTime" name="time">
+          </div>
+        </div>
+        <div class="form-group col-xl-12 justify-content-center d-flex">
+          <div class="col-6">
+            <label for="">Hora fin:</label>
+          </div>
+          <div class="col-6">
+            <input class="form-control" type="time" id="endTime" [(ngModel)]="endTime" name="endTime">
+          </div>
+        </div>
+        <div class="form-group col-xl-12 justify-content-center d-flex" *ngIf="task.type==1">
+          <div class="col-6">
+            <label for="">Max Power (W):</label>
+          </div>
+          <div class="col-6">
+            <input class="form-control" type="text" id="maxPower" placeholder="W" name="maxPower"
+              (change)="checkPriority(task)" [(ngModel)]="task.maxPower">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+
+        <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="error!=''">
+          <div class="alert-message">
+            {{ error }}
+          </div>
+        </div>
+        <div class="alert alert-success alert-dismissible m-auto" role="alert" *ngIf="successMessage">
+          <div class="alert-message">
+            {{"settings.successMessage"}}
+          </div>
+        </div>
+        <button type="button" class="btn btn-secondary" (click)="close()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="saveTask()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

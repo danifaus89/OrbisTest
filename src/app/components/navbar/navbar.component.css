@@ -1,0 +1,25 @@
+.navBar{
+  background-color: #01778B;
+  padding: 1rem 0;
+  width: 100%;
+}
+.contElements{
+  display: flex;
+
+}
+.contElements a{
+  color:white;
+  padding:1rem;
+  font-size: 1.5rem;
+}
+
+.contElements a:hover{
+  cursor: pointer;
+  color: #00B2D1;
+}
+
+
+.rightZone{
+  margin-left: auto;
+}
+

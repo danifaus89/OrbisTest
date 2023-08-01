@@ -1,0 +1,181 @@
+{
+  "modules": [
+    {
+      "uid": 9,
+      "topic_name": "sys",
+      "name": "SysManager",
+      "description": null,
+      "version": "1.0.0",
+      "table_name_element_data": null,
+      "stat": {
+        "version_fimware": "6.2.31",
+        "version_hardware": "PK1T1-CV1.2",
+        "potencia_maxima": 7360,
+        "limite_potencia": 7360,
+        "numero_conectores": 2,
+        "direccion_mac": "00:00:00:00:00:00",
+        "propietario": "Pepe Perez",
+        "modelo": "VIARIS UNI",
+        "serial": "EEV482565as",
+        "name": "Dispositivo de prueba"
+      }
+    },
+    {
+      "uid": 17,
+      "topic_name": "schedman",
+      "name": "SchedulerManager",
+      "description": null,
+      "version": "1.0.0",
+      "table_name_element_data": null,
+      "cfg": {
+        "updFlags": 1,
+        "verbosity": 3,
+        "date_build": "2021-02-09T11:29:45.000Z",
+        "timestamp": "2022-10-18T08:05:16.000Z"
+      },
+      "elements": [
+        {
+          "id:": 1,
+          "name": "Conector 1",
+          "data": {
+            "cfg": {
+              "tasks": "[{\"id\":1,\"user\":\"\",\"group\":0,\"priority\":1,\"initTime\":{\"day\":0,\"month\":0,\"weekday\":0,\"timeList\":[{\"hourMin\":600,\"duration\":180}]},\"active\":1,\"type\":0,\"maxPower\":-1,\"solarPriority\":0},{\"id\":3,\"user\":\"\",\"group\":0,\"priority\":1,\"initTime\":{\"day\":0,\"month\":0,\"weekday\":65,\"timeList\":[{\"hourMin\":0,\"duration\":1440}]},\"active\":1,\"type\":1,\"maxPower\":3450,\"solarPriority\":1},{\"id\":2,\"user\":\"\",\"group\":0,\"priority\":1,\"initTime\":{\"day\":0,\"month\":0,\"weekday\":62,\"timeList\":[{\"hourMin\":0,\"duration\":1440}]},\"active\":1,\"type\":1,\"maxPower\":3450,\"solarPriority\":1}]",
+              "defaultState": 1,
+              "date_build": "2021-02-09T11:29:45.000Z",
+              "timestamp": "2023-05-30T11:40:24.000Z"
+            },
+            "stat": {
+              "idTask": 0,
+              "idUser": "",
+              "idGroup": 0,
+              "priority": 255,
+              "state": 1,
+              "active": 0,
+              "idTaskPower": 3,
+              "type": 0,
+              "maxPower": 0,
+              "solarPriority": 1,
+              "minCurrent": 0,
+              "phases": 0,
+              "timestamp": "2023-05-31T21:34:02.000Z"
+            }
+          }
+        },
+        {
+          "id:": 2,
+          "name": "Conector 2",
+          "data": {
+            "cfg": {
+              "tasks": "[]",
+              "defaultState": 1,
+              "date_build": "2021-02-09T11:29:45.000Z",
+              "timestamp": "2023-05-09T08:47:04.000Z"
+            },
+            "stat": {
+              "idTask": 0,
+              "idUser": "",
+              "idGroup": 0,
+              "priority": 255,
+              "state": 0,
+              "active": 0,
+              "idTaskPower": 0,
+              "type": 0,
+              "maxPower": 0,
+              "solarPriority": 0,
+              "minCurrent": 0,
+              "phases": 0,
+              "timestamp": "2023-05-09T07:09:59.000Z"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "uid": 22,
+      "topic_name": "modulator",
+      "name": "ModulatorManager",
+      "description": null,
+      "version": "2.0.0",
+      "table_name_element_data": "device_mod_module_modulator_element_data",
+      "cfg": {
+        "updFlags": 1,
+        "verbosity": 3,
+        "limitPower": 7360,
+        "limitPowerByPhase": "[7360,7360,7360]",
+        "selectorPosition": 0,
+        "notifCycle": 15,
+        "splSlaveFailPower": null,
+        "switchEnabled": 0,
+        "date_build": "2021-03-02T10:58:37.000Z",
+        "timestamp": "2021-03-02T09:58:37.000Z"
+      },
+      "stat": {
+        "consumo_casa": 353,
+        "consumo_coche1": 2586,
+        "consumo_coche2": 2000,
+        "consumo_total": 4939,
+        "generacion_solar": 2810,
+        "generacion_red_electrica": 2129,
+        "consumo_por_fases_casa": "[100,150,103]",
+        "consumo_por_fases_coche1": "[586,1300,700]",
+        "consumo_por_fases_coche2": "[700,640,660]",
+        "consumo_por_fases_total": "[1386,2090,1463]",
+        "generacion_por_fases_solar": "[436,759,1615]",
+        "generacion_por_fases_red_electrica": "[450,829,890]",
+        "timestamp": "2023-05-31T13:51:05.000Z"
+      }
+    },
+    {
+      "uid": 12,
+      "topic_name": "network",
+      "name": "Network Manager",
+      "description": null,
+      "version": "2.0.0",
+      "table_name_element_data": null,
+      "cfg": {
+        "staEssid": "Red_Wifi1",
+        "channel": 0,
+        "apEnabled": 1,
+        "apTimeOut": 90000,
+        "wifiDhcpen": 1,
+        "wifiipstatic": "192.168.1.238",
+        "wifimask": "255.255.255.0",
+        "wifigw": "192.168.1.1",
+        "wifidns": "192.168.1.1",
+        "ethDhcpen": 1,
+        "ethipstatic": "0.0.0.0",
+        "ethmask": "0.0.0.0",
+        "ethgw": "0.0.0.0",
+        "ethdns": "0.0.0.0",
+        "date_build": "2021-02-25T11:23:19.000Z",
+        "timestamp": "2023-01-16T17:10:19.000Z"
+      }
+    }
+  ],
+  "elements": [
+    {
+      "id": 1,
+      "name": "Conector 1",
+      "tipo": "Tipo-2",
+      "estado": "Cargando",
+      "tiempo_cargando": 630,
+      "total_cargado": 1120
+    },
+    {
+      "id": 2,
+      "name": "Conector 2",
+      "tipo": "Schuko",
+      "estado": "Disponible",
+      "tiempo_cargando": 0,
+      "total_cargado": 0
+    },
+    {
+      "id": 3,
+      "name": "Conector 3",
+      "tipo": "Tipo-3",
+      "estado": "Error",
+      "tiempo_cargando": 0,
+      "total_cargado": 0
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<div [ngClass]="{'col-12 col-xl-6' : !allSettings}">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Reset</h5>
+        </div>
+        <div class="card-body">
+            <div class="form-group row align-items-sm-center">
+                <div class="col-sm-8">
+                    Reinicia el dispositivo sin perder ninguna configuración
+                </div>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary" (click)='reset("hard")'>Reiniciar</button>
+                </div>
+            </div>
+            <div class="form-group row align-items-sm-center">
+                <div class="col-sm-8">
+                    Restablece todos los ajustes del dispositivo, excepto los de red, con los valores predeterminados de fábrica
+                </div>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary" (click)='reset("factoryresetsoft")'>Restaurar</button>
+                </div>
+            </div>
+            <div class="form-group row align-items-sm-center">
+                <div class="col-sm-8">
+                    Restablece todos los ajustes del dispositivo, incluidos los ajustes de red, con los valores predeterminados de fábrica
+                </div>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary" (click)='reset("factoryresethard")'>Restaurar todo</button>
+                </div>
+            </div>
+
+            <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="error!=''">
+                <div class="alert-message">
+                    {{ error }}
+                </div>
+            </div>
+            <div class="alert alert-success alert-dismissible" role="alert" *ngIf="successMessage">
+                <div class="alert-message" *ngIf="lastType=='hard'">
+                    Reiniciando dispositivo...
+                </div>
+                <div class="alert-message" *ngIf="lastType!='hard'">
+                    Restaurando dispositivo...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

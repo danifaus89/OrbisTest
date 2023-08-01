@@ -1,0 +1,56 @@
+<div *ngIf="device">
+  <div class="cardDevice" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title">Modulator Manager</h5>
+
+      <div>
+        <div class="row">
+          <div class="col-3">
+            <h4>
+              <span>Consumo total: </span>{{device.consumo_total}}
+            </h4>
+            <div class="card flex justify-content-center mb-5">
+              <p-chart type="doughnut" [data]="dataConsumo" class="chart chart-doughnut" [options]="options"></p-chart>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <h4>
+              <span>Generacion solar: </span>
+            </h4>
+            <div class="card flex justify-content-center mb-5">
+              <p-chart type="doughnut" [data]="dataGenSolar" class="chart chart-doughnut" [options]="options"></p-chart>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <h4>
+              <span>Consumo por fases: </span>
+            </h4>
+            <div class="card flex justify-content-center mb-5">
+              <p-chart type="doughnut" [data]="dataCF" class="chart chart-doughnut" [options]="options"></p-chart>
+            </div>
+          </div>
+          <div class="col-3">
+            <h4>
+              <span>Generación por fases: </span>
+            </h4>
+            <div class="card flex justify-content-center mb-5">
+              <p-chart type="doughnut" [data]="dataGPF" class="chart chart-doughnut" [options]="options"></p-chart>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+      <a href="#" class="btn btn-primary">
+        <i class="bi bi-gear"></i>
+        Ajustes
+      </a>
+    </div>
+  </div>
+</div>
